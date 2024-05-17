@@ -4,18 +4,18 @@ public class Library {
 
     public Library() {
         books = new Book[100];
-        count = 0;
+        int count = 0;
     }
 
     public void addBook(Book bookAdd) {
         if (count < books.length) {
-            books[count] = bookAdd;
-            count++;
-            System.out.println("We add this book in library: " + bookAdd);
-        } else {
-            System.out.println("We can`t add this book " + bookAdd + " library is overflowing");
-        }
+                books[count] = bookAdd;
+                count++;
+                System.out.println("We add this book: " + bookAdd);
 
+        } else {
+            System.out.println("We can`t add this book: " + bookAdd+ ", library is overflowing");
+        }
     }
 
     public void removeBook(Book bookRemove) {
@@ -32,17 +32,14 @@ public class Library {
         }
         System.out.println("We can't remove this book " + bookRemove);
     }
-
     public void printBook(Book bookList) {
         if (count > 0) {
-            System.out.println("Full list book: ");
+            System.out.println("Full list book:");
             for (int i = 0; i < count; i++) {
                 System.out.println(" - " + books[i]);
             }
         } else {
-            System.out.println(" Library empty ");
+            System.out.println("Library is empty");
         }
     }
-
-
 }
